@@ -1,0 +1,22 @@
+body {
+	background-color:black;
+}
+
+span {
+	font-size:10em;
+}
+
+h1 {
+	color:#f8f8f8;
+}
+
+.speed {
+	border-style:solid;
+	border-color:white;
+	border-width:2px;
+	font-family:Garamond;
+	position:fixed;
+	left:100px;
+	top:50px;
+}
+
