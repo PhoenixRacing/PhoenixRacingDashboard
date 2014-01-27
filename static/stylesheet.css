@@ -1,0 +1,49 @@
+body {
+	background-color:black;
+}
+
+.speed2 {
+	font-size: 10em;
+}
+
+.gforce2 {
+	font-size:8em;
+}
+
+.gas_gauge2 {
+	font-size: 8em;
+}
+
+h1 {
+	color:#f8f8f8;
+}
+
+.speed {
+	border-style:solid;
+	border-color:white;
+	border-width:2px;
+	font-family:Garamond;
+	position:fixed;
+	left:100px;
+	top:50px;
+}
+
+.gforce {
+	border-style:solid;
+	border-color:white;
+	border-width:2px;
+	font-family:Garamond;
+	position:fixed;
+	right:250px;
+	bottom:50px;
+}
+
+.gas_gauge {
+	border-style:solid;
+	border-color:white;
+	border-width:2px;
+	font-family:Garamond;
+	position:fixed;
+	right:250px;
+	top:50px;
+}
