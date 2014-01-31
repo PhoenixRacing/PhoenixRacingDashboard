@@ -10,13 +10,13 @@
 				$.get("/asyncSpeed", function(response) {
 					$("#speed").text(response);
 				})
-			}, 100)
+			}, 150)
 		})
 	</script>	
 </head>
 
 <body>
-	<div class = "speed">
+	<div class = "speed_display">
 		<h1>
 			<span id="speed">{{speed}}</span> mph</h1>
 	</div>

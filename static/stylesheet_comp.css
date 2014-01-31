@@ -1,6 +1,17 @@
 body {
-	background-color:black;
-	font-family:Garamond;
-	color:#f8f8f8;
+	background-color:#e0e0e0;
+	font-family:Arial;
+	color:#181818;
 }
 
+.speed_display {
+	position:fixed;
+	top:100px;
+	left:300px;
+	width:100px;
+	font-size:1em;
+}
+
+#speed {
+	font-size:7em;
+}

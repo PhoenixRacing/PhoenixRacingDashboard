@@ -12,10 +12,6 @@ def index():
 def competition():
 	return render_template('competition.html', speed = 0)
 
-@app.route('/speed')
-def speed():
-	return render_template('speed.html', speed = 0)
-
 @app.route('/asyncSpeed')
 def asyncSpeed():
 	#dummy_speed = 12
