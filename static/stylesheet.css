@@ -16,28 +16,36 @@ body {
 
 .upper_left2{
 	font-size: 2em;
+	color: #FF0700;
 }
 
 .upper_right2{
 	font-size: 2em;
+	color: #FF0700;
 }
 
 .lower_left2{
 	font-size: 2em;
+	color: #FF0700;
 }
 
 .lower_right2{
 	font-size: 2em;
+	color: #FF0700;
 }
 
 h1 {
 	color:#181818;
 }
 
-.speed {
+.mph{
+	font-size: 2em;
+}
+
+.speed_display {
 	font-family:Arial;
 	position:fixed;
-	left:100px;
+	right:650px;
 	top:50px;
 }
 

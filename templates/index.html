@@ -3,12 +3,25 @@
 <head>
 	<title>Test Dashboard</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			setInterval(function() {
+				$.get("/asyncSpeed", function(response) {
+					$("#speed").text(response);
+				})
+			}, 150)
+		})
+	</script>	
 </head>
 
 <body>
-	<div class = "speed">
+
+	<div class = "speed_display">
 		<h1>
-			<span class = "speed2">25</span> mph</h1>
+			<span class = "speed2" id="speed">{{speed}}</span>
+			<span class = "mph">mph</span>
+		</h1>
 	</div>
 
 	<div class = "gforce">
