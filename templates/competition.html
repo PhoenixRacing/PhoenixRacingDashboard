@@ -10,15 +10,55 @@
 				$.get("/asyncSpeed", function(response) {
 					$("#speed").text(response);
 				})
-			}, 150)
+			}, 180)
 		})
 	</script>	
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			setInterval(function() {
+				$.get("/curr_time", function(response) {
+					$("#curr").text(response);
+				})
+			}, 100)
+		})
+	</script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			setInterval(function() {
+				$.get("/prev_time", function(response) {
+					$("#prev").text(response);
+				})
+			}, 100)
+		})
+	</script>
 </head>
 
 <body>
-	<div class = "speed_display">
-		<h1>
-			<span id="speed">{{speed}}</span> mph</h1>
+	<div class = "speed_display"><span id = "speed"><strong>{{speed}}</strong></span></div>
+
+	<div class = "mph">
+		<h1>mph</h1>
 	</div>
+
+	<div class = "previous">
+		<h1>Previous</h1>
+	</div>
+
+	<div class = "prev_time">
+		<h1><span id = "prev">{{prev}}</span></h1>
+	</div>
+
+	<div class = "current">
+		<h1>Current</h1>
+	</div>
+
+	<div class = "curr_time">
+		<h1><span id = "curr">{{curr}}</span></h1>
+	</div>
+
 </body>
 </html>
