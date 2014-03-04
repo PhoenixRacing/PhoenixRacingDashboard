@@ -3,18 +3,11 @@
 <head>
 	<title>Competition Dashboard</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet_comp.css') }}">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			setInterval(function() {
-				$.get("/asyncSpeed", function(response) {
-					$("#speed").text(response);
-				})
-			}, 180)
-		})
-	</script>	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="http:////cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='dash.js') }}"></script>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			setInterval(function() {
@@ -34,11 +27,12 @@
 				})
 			}, 100)
 		})
-	</script>
+	</script>!-->
 </head>
 
 <body>
-	<div class = "speed_display"><span id = "speed"><strong>{{speed}}</strong></span></div>
+	<div>
+	<div class = "speed_display"><div id = "speed_list"></div></div>
 
 	<div class = "mph">
 		<h1>mph</h1>
@@ -49,7 +43,7 @@
 	</div>
 
 	<div class = "prev_time">
-		<h1><span id = "prev">{{prev}}</span></h1>
+		<h1><div id="prev_time"></div></h1>
 	</div>
 
 	<div class = "current">
@@ -59,6 +53,7 @@
 	<div class = "curr_time">
 		<h1><span id = "curr">{{curr}}</span></h1>
 	</div>
+</div>
 
 </body>
 </html>

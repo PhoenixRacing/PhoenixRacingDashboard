@@ -5,14 +5,20 @@ body {
 }
 
 .speed_display {
+	border-style: solid;
 	position:absolute;
 	left:50px;
-	top:50px;
+	top:0px;
 	width:600px;
 	height:500px;
-	font-size:26em;
 	text-align:center;
+	font-size:100px;
+	margin: 0;
 }
+
+/*.speed_display  {
+	font-size:26em;
+}*/
 
 .mph {
 	font-size:2.5em;

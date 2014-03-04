@@ -1,10 +1,16 @@
 import random
 import time
 import datetime
+
+from flask import Flask, render_template, session
+from flask.ext.socketio import SocketIO, emit
 from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
+app.debug=True
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
 
 class Time(object):
 	'''A Class that handles and formats time that I totally stole
@@ -22,7 +28,6 @@ def int_to_time(seconds):
 	time.hour, time.minute = divmod(minutes, 60)
 	return time
 
-
 @app.route('/')
 @app.route('/index')
 def index():
@@ -34,9 +39,15 @@ def competition():
 
 @app.route('/asyncSpeed')
 def asyncSpeed():
-	#dummy_speed = 12
-	#return str(dummy_speed)
 	return str(random.randint(0,25))
+
+@socketio.on('update', namespace='/test')
+def test_message(message):
+	emit('updateSpeed', {'speed': random.randint(0, 25)})
+
+@socketio.on('update ptime', namespace='/test')
+def test_ptime(message):
+	emit('updatePtime', {'prev': 'hello'})
 
 format = '%M:%S';
 
@@ -55,4 +66,4 @@ def prev_time():
 	return str(prev_t)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    socketio.run(app)
