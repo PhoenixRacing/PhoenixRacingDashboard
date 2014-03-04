@@ -5,13 +5,15 @@ body {
 }
 
 .speed_display {
-	position:absolute;
+	position:fixed;
 	left:50px;
-	top:50px;
+	top:0px;
 	width:600px;
 	height:500px;
-	font-size:26em;
 	text-align:center;
+	font-size:400px;
+	margin-top: 60px;
+	padding: 0px;
 }
 
 .mph {
