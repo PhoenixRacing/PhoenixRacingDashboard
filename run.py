@@ -37,33 +37,30 @@ def index():
 def competition():
 	return render_template('competition.html', speed = 0)
 
-@app.route('/asyncSpeed')
-def asyncSpeed():
-	return str(random.randint(0,25))
-
 @socketio.on('update', namespace='/test')
 def test_message(message):
 	emit('updateSpeed', {'speed': random.randint(0, 25)})
 
-@socketio.on('update ptime', namespace='/test')
-def test_ptime(message):
-	emit('updatePtime', {'prev': 'hello'})
-
 format = '%M:%S';
 
-@app.route('/curr_time')
-def curr_time():
-	'''This function returns the current minutes and seconds. 
-	Later we will feed it dummy data'''
-	curr_t = datetime.datetime.now()
-	return curr_t.strftime(format)
+@socketio.on('update ptime', namespace='/test')
+def test_ptime(message):
+	prev_t = datetime.datetime.now();
+	emit('updatePtime', {'prev': str(prev_t.strftime(format))})
 
-@app.route('/prev_time')
-def prev_time():
-	'''This function assumes that the previous time is stored as an integer 
-	number of seconds'''
-	prev_t = int_to_time(134)
-	return str(prev_t)
+@socketio.on('current time', namespace='/test')
+def test_ctime(message):
+	curr_t = datetime.datetime.now();
+	emit('updateCtime', {'curr': str(curr_t.strftime(format))})
+
+
+#@app.route('/curr_time')
+#def curr_time():
+#	'''This function returns the current minutes and seconds. 
+#	Later we will feed it dummy data'''
+#	curr_t = datetime.datetime.now()
+#	return curr_t.strftime(format)
+
 
 if __name__ == '__main__':
     socketio.run(app)

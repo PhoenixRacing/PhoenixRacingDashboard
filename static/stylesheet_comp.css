@@ -5,20 +5,16 @@ body {
 }
 
 .speed_display {
-	border-style: solid;
-	position:absolute;
+	position:fixed;
 	left:50px;
 	top:0px;
 	width:600px;
 	height:500px;
 	text-align:center;
-	font-size:100px;
-	margin: 0;
+	font-size:400px;
+	margin-top: 60px;
+	padding: 0px;
 }
-
-/*.speed_display  {
-	font-size:26em;
-}*/
 
 .mph {
 	font-size:2.5em;
