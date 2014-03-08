@@ -3,15 +3,8 @@ body {
 }
 
 .speed2 {
-	font-size: 19em;
-}
+	font-size: 500px;
 
-.gforce2 {
-	font-size:8em;
-}
-
-.gas_gauge2 {
-	font-size: 8em;
 }
 
 .upper_left2{
@@ -20,16 +13,6 @@ body {
 }
 
 .upper_right2{
-	font-size: 2em;
-	color: #FF0700;
-}
-
-.lower_left2{
-	font-size: 2em;
-	color: #FF0700;
-}
-
-.lower_right2{
 	font-size: 2em;
 	color: #FF0700;
 }
@@ -45,48 +28,38 @@ h1 {
 .speed_display {
 	font-family:Arial;
 	position:fixed;
-	right:650px;
-	top:50px;
+	width:100%;
+	text-align: center;
+	top:100px;
 }
 
-.gforce {
-	font-family:Arial;
-	position:fixed;
-	right:250px;
-	bottom:50px;
-}
-
-.gas_gauge {
-	font-family:Arial;
-	position:fixed;
-	right:250px;
-	top:50px;
-}
 
 .upper_left {
 	font-family:Arial;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 0px;
+	left: 30px;
 }
 
 .upper_right {
 	font-family:Arial;
 	position: absolute;
-	top: 0;
-	right: 0%;
+	top: 0px;
+	right: 30px;
 }
 
-.lower_left {
-	font-family:Arial;
-	position: absolute;
-	bottom: 0%;
-	left: 0;
+.brake_bar {
+	border-style: solid;
+	position:fixed;
+	left:250px;
+	top:200px;
+	width:60px;
+	height:400px;
+	background-color: #181818;
 }
 
-.lower_right {
-	font-family:Arial;
-	bottom: 0%;
-	right: 0%;
-	position: absolute;
+.brake_bar_fill {
+	background-color: #e0e0e0;
+	height:40%;
+	width:100%;
 }

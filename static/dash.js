@@ -1,5 +1,7 @@
 $(document).ready(function(){
     var socket = io.connect('http://' + document.domain + ':' + location.port + '/test');
+    
+    //updates the car speed
     socket.on('updateSpeed', function(msg) {
         $('#speed_list').html('<span>' + msg.speed + '</span>');
     });
@@ -8,6 +10,7 @@ $(document).ready(function(){
         socket.emit('update', {data : {}});    
     }
 
+    //updates the previous time and displays on the testing dashboard
     socket.on('updatePtime', function(msg) {
         $('#prev_time').html('<p>' + msg.prev + '</p>');
     });
@@ -16,6 +19,7 @@ $(document).ready(function(){
         socket.emit('update ptime', {data : {}});
     }
 
+    //updates the current time and displays on the testing dashboard
     socket.on('updateCtime', function(msg) {
         $('#curr_time').html('<p>' + msg.curr + '</p>');
     });
@@ -23,4 +27,17 @@ $(document).ready(function(){
     function getCtime() {
         socket.emit('current time', {data : {}});
     }
+
+    //updates the brake fill and displays to the left of the speed
+    socket.on('updateBrake', function(msg) {
+        var b_percent = msg.brake * 100;
+        var str_b_percent = b_percent.toString();
+        var brake = str_b_percent.concat("%");
+        $(".brake_bar_fill").css( "height", brake );
+    });
+    setInterval(getBrake, 80);
+    function getBrake() {
+        socket.emit('update brake', {data : {}});
+    }
+
  });

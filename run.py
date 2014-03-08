@@ -39,6 +39,10 @@ def test_ctime(message):
 	curr_t = datetime.datetime.now();
 	emit('updateCtime', {'curr': str(curr_t.strftime(format))})
 
+@socketio.on('update brake', namespace='/test')
+def test_brake(message):
+	pot_value = float(random.randint(0,100))/(100);
+	emit('updateBrake', {'brake': pot_value})
 
 if __name__ == '__main__':
     socketio.run(app)
