@@ -40,4 +40,17 @@ $(document).ready(function(){
         socket.emit('update brake', {data : {}});
     }
 
+    //updates the throttle fill and displays to the right of the speed
+    socket.on('updateThrottle', function(msg) {
+        var throt_p =  msg.throttle*100;
+        var str_throttle = throt_p.toString();
+        var throttle = str_throttle.concat("%");
+        $(".throttle_bar_fill").css("height", throttle );
+    });
+    setInterval(getThrottle, 80);
+    function getThrottle() { 
+        socket.emit('update throttle', {data : {}});
+    }
+
+
  });

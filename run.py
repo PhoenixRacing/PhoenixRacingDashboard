@@ -40,9 +40,16 @@ def test_ctime(message):
 	emit('updateCtime', {'curr': str(curr_t.strftime(format))})
 
 @socketio.on('update brake', namespace='/test')
+#Assuming potentiometer value between 0 and 1
 def test_brake(message):
 	pot_value = float(random.randint(0,100))/(100);
 	emit('updateBrake', {'brake': pot_value})
+
+@socketio.on('update throttle', namespace='/test')
+#Assuming potentiometer value between 0 and 1
+def test_throttle(message):
+	pot_value = float(random.randint(0,100))/(100);
+	emit('updateThrottle', {'throttle': pot_value})
 
 if __name__ == '__main__':
     socketio.run(app)
