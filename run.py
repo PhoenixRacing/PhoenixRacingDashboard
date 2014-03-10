@@ -12,15 +12,16 @@ app.debug=True
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
-
+#Loads the dashboard for competition
 @app.route('/')
 @app.route('/index')
 def index():
 	return render_template('index.html')
 
-@app.route('/competition')
+#Loads the dashboard for test/practice driving
+@app.route('/test_dash')
 def competition():
-	return render_template('competition.html', speed = 0)
+	return render_template('test_dash.html', speed = 0)
 
 
 @socketio.on('update', namespace='/test')

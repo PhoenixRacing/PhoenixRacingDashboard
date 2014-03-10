@@ -1,3 +1,8 @@
+ 
+//Opens a socket with the server.
+//Updates the speed, previous time, current time,
+//throttle percentage and brake percentage. 
+
 $(document).ready(function(){
     var socket = io.connect('http://' + document.domain + ':' + location.port + '/test');
     
@@ -51,6 +56,5 @@ $(document).ready(function(){
     function getThrottle() { 
         socket.emit('update throttle', {data : {}});
     }
-
 
  });
