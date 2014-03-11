@@ -7,22 +7,8 @@ body {
 
 }
 
-.upper_left2{
-	font-size: 2em;
-	color: #FF0700;
-}
-
-.upper_right2{
-	font-size: 2em;
-	color: #FF0700;
-}
-
 h1 {
 	color:#181818;
-}
-
-.mph{
-	font-size: 2em;
 }
 
 .speed_display {
@@ -35,26 +21,30 @@ h1 {
 
 
 .upper_left {
+	font-size:7em;
+	color: #e0e0e0;
 	font-family:Arial;
 	position: absolute;
-	top: 0px;
-	left: 30px;
+	top: 40px;
+	left: 60px;
 }
 
 .upper_right {
+	font-size: 7em;
+	color: #e0e0e0;
 	font-family:Arial;
 	position: absolute;
-	top: 0px;
-	right: 30px;
+	top: 40px;
+	right: 60px;
 }
 
 .brake_bar {
 	border-style: solid;
 	position:fixed;
 	left:250px;
-	top:200px;
+	top:150px;
 	width:60px;
-	height:400px;
+	height:500px;
 	background-color: #181818;
 }
 
@@ -68,9 +58,9 @@ h1 {
 	border-style: solid;
 	position:fixed;
 	right:250px;
-	top:200px;
+	top:150px;
 	width:60px;
-	height:400px;
+	height:500px;
 	background-color: #181818;
 }
 

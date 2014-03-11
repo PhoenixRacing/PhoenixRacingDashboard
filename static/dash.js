@@ -10,7 +10,7 @@ $(document).ready(function(){
     socket.on('updateSpeed', function(msg) {
         $('#speed_list').html('<span>' + msg.speed + '</span>');
     });
-    setInterval(getSpeed, 150);
+    setInterval(getSpeed, 180);
     function getSpeed() {
         socket.emit('update', {data : {}});    
     }
@@ -56,5 +56,30 @@ $(document).ready(function(){
     function getThrottle() { 
         socket.emit('update throttle', {data : {}});
     }
+
+    //Displays an S if wheel spinning 
+    socket.on('updateSpin', function(msg) {
+        var spin = msg.spin;
+        if (spin) {
+            $(".upper_left").css("color", "#D80000");
+        }
+    })
+    setInterval(getSpin, 200);
+    function getSpin() {
+        socket.emit('update spin', {data: {}});
+    }
+
+    //Display an L if wheel locking
+    socket.on('updateLock', function(msg) {
+        var lock = msg.lock;
+        if (lock) {
+            $(".upper_right").css("color", "#D80000");
+        }
+    })
+    setInterval(getLock, 200);
+    function getLock() {
+        socket.emit('update lock', {data: {}});
+    }
+
 
  });

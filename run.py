@@ -52,5 +52,16 @@ def test_throttle(message):
 	pot_value = float(random.randint(0,100))/(100);
 	emit('updateThrottle', {'throttle': pot_value})
 
+@socketio.on('update spin', namespace='/test')
+def test_spin(message):
+	s = 1;
+	emit('updateSpin', {'spin': s})
+
+@socketio.on('update lock', namespace='/test')
+def test_lock(message):
+	l = 1;
+	emit('updateLock', {'lock': l})
+
+
 if __name__ == '__main__':
     socketio.run(app)
